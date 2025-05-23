@@ -35,8 +35,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-CLERK_API_KEY = os.getenv("CLERK_API_KEY")
-CLERK_JWT_KEY = os.getenv("CLERK_JWT_KEY")
 
 
 ROOT_URLCONF = 'demo_django_project.urls'
