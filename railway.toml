@@ -1,2 +1,2 @@
 [deploy]
-preDeployCommand = ["/bin/sh -c \"python manage.py collectstatic --noinput\"]
+preDeployCommand = ["/bin/sh -c \"python manage.py collectstatic --noinput\""]
