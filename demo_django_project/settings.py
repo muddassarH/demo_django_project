@@ -63,6 +63,7 @@ DATABASES = {
     "default": db_config(
         default="postgresql://postgres:supabase@supabase@db.bcmtibqydkqnnfsxstry.supabase.co:5432/postgres",
         conn_max_age=600,
+        ssl_require=True,
     )
 }
 
