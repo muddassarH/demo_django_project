@@ -1,7 +1,7 @@
-from django.urls import path, include
-from .views import hello
-
+# api/urls.py
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path("", hello),  
-               ]
+    path('hello/', views.hello, name='hello')
+]

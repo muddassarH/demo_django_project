@@ -1,7 +1,14 @@
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from clerk import Clerk  # pip install clerk-sdk
+from django.http import JsonResponse
+from .models import Greeting
 
-@api_view(["GET"])
 def hello(request):
-    return Response({"message": "Hello from Django on Railway!"})
+    """API endpoint returning a greeting message from the database."""
+    # Fetch the first Greeting object (if exists)
+    greeting = Greeting.objects.first()
+    if greeting:
+        message = greeting.message
+    else:
+        message = "Hello from the database!"
+        # If no greeting in DB, optionally create one (commented out):
+        # greeting = Greeting.objects.create(message=message)
+    return JsonResponse({"message": message})
