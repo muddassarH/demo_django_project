@@ -1,3 +1,2 @@
 [deploy]
-preDeployCommand = ["/bin/sh -c \"python manage.py collectstatic --noinput\""]
-startCommand     = "/bin/sh -c \"gunicorn demo_django_project.wsgi\""
+preDeployCommand = ["/bin/sh -c \"python manage.py collectstatic --noinput\"]
