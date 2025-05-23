@@ -56,13 +56,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'demo_django_project.wsgi.application'
 
-# Database: use SUPABASE’S DATABASE_URL directly
+# # Database: use SUPABASE’S DATABASE_URL directly
+# DATABASES = {
+#     "default": db_config(
+#         default="postgresql://postgres:supabase@supabase@db.bcmtibqydkqnnfsxstry.supabase.co:5432/postgres",
+#         conn_max_age=600,
+#         ssl_require=True,
+#     )
+# }
 DATABASES = {
-    "default": db_config(
-        default="postgresql://postgres:supabase@supabase@db.bcmtibqydkqnnfsxstry.supabase.co:5432/postgres",
-        conn_max_age=600,
-        ssl_require=True,
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'supabase@supabase',
+        'HOST': 'db.bcmtibqydkqnnfsxstry.supabase.co',        # db.bcmtibqydkqnnfsxstry.supabase.co
+        'PORT': '5432',
+        'OPTIONS': {'sslmode': 'require'},
+    }
 }
 
 # Password validation
